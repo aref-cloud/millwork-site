@@ -1,0 +1,276 @@
+/* ============================================================
+   Fancy Millwork — colors_and_type.css
+   The atomic design tokens for the millwork division of
+   Fancy Floors. Editorial, architectural, cinematic.
+
+   Webfonts loaded from Google Fonts:
+   - Cormorant Garamond  (display serif)
+   - Inter Tight         (body / UI sans)
+   - JetBrains Mono      (mono — used for specs, dimensions, captions)
+
+   Substitution note: we did not receive brand-licensed font files,
+   so Cormorant Garamond stands in for an editorial display serif
+   in the GT Sectra / Canela family. Replace with licensed fonts
+   when available — typographic hierarchy will hold.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  /* ---------- Color · Foundations -------------------------------
+     Warm off-white paper, walnut wood tones, soft architectural
+     ink. Never pure white, never pure black. Built around the
+     light that falls on raw walnut and Carrara marble.
+  ----------------------------------------------------------------- */
+
+  /* Paper / surface neutrals (warm off-white scale) */
+  --fm-paper-50:  #fbf8f3;  /* lightest cream — page background */
+  --fm-paper-100: #f4efe7;  /* default warm off-white */
+  --fm-paper-200: #ece5d8;  /* card / inset background */
+  --fm-paper-300: #ddd3c1;  /* subtle divider, hairlines on light */
+  --fm-paper-400: #c6b9a1;  /* muted tan, captions on paper */
+
+  /* Walnut wood scale (the brand's signature warm) */
+  --fm-walnut-100: #c9a786;  /* light walnut highlight */
+  --fm-walnut-300: #a07a55;  /* mid walnut */
+  --fm-walnut-500: #6e4a2c;  /* core walnut — accent color */
+  --fm-walnut-700: #4a3220;  /* dark walnut, deep grain */
+  --fm-walnut-900: #2b1d12;  /* near-black walnut, shadowed wood */
+
+  /* Ink scale — soft architectural blacks, never #000 */
+  --fm-ink-900: #1a1714;   /* primary ink — body text on paper */
+  --fm-ink-700: #3a342e;   /* secondary ink */
+  --fm-ink-500: #6b6258;   /* tertiary ink, captions */
+  --fm-ink-300: #9d9489;   /* disabled ink */
+  --fm-ink-100: #d6cfc4;   /* whisper ink, low-emphasis dividers */
+
+  /* Accent — used sparingly. A single brass note. */
+  --fm-brass-500: #b08a4b;  /* hardware brass, hover underline */
+  --fm-brass-700: #7d6133;  /* pressed brass */
+
+  /* Semantic state */
+  --fm-success: #5a6b3f;    /* lichen green — quiet, not bright */
+  --fm-warning: #a67025;    /* burnt amber */
+  --fm-danger:  #8a3a2a;    /* terracotta — never pure red */
+
+  /* ---------- Color · Semantic ----------------------------------
+     Use these in components. The foundations above are the
+     palette; these are the application.
+  ----------------------------------------------------------------- */
+  --fm-bg:           var(--fm-paper-50);
+  --fm-bg-elev:      var(--fm-paper-100);
+  --fm-bg-inset:     var(--fm-paper-200);
+  --fm-bg-inverse:   var(--fm-ink-900);
+
+  --fm-fg:           var(--fm-ink-900);   /* primary text */
+  --fm-fg-muted:     var(--fm-ink-700);   /* secondary */
+  --fm-fg-subtle:    var(--fm-ink-500);   /* captions, meta */
+  --fm-fg-faint:     var(--fm-ink-300);   /* hint, disabled */
+  --fm-fg-inverse:   var(--fm-paper-100); /* text on ink-900 */
+
+  --fm-accent:       var(--fm-walnut-500);
+  --fm-accent-hover: var(--fm-walnut-700);
+
+  --fm-border:       var(--fm-paper-300);   /* hairline */
+  --fm-border-strong:var(--fm-ink-300);
+
+  /* ---------- Type · Foundations --------------------------------- */
+  --fm-font-display: 'Cormorant Garamond', 'EB Garamond', 'Garamond', Georgia, serif;
+  --fm-font-sans:    'Inter Tight', 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  --fm-font-mono:    'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  /* Type scale — editorial, generous. Built for 1440+ canvases. */
+  --fm-size-display-1: clamp(56px, 8vw, 128px);  /* Hero, single word */
+  --fm-size-display-2: clamp(44px, 5.5vw, 88px); /* Page opener */
+  --fm-size-h1:        clamp(36px, 4vw, 64px);
+  --fm-size-h2:        clamp(28px, 2.6vw, 40px);
+  --fm-size-h3:        24px;
+  --fm-size-h4:        20px;
+  --fm-size-body-lg:   18px;
+  --fm-size-body:      16px;
+  --fm-size-body-sm:   14px;
+  --fm-size-caption:   12px;
+  --fm-size-eyebrow:   11px;  /* tracked-out uppercase label */
+
+  /* Line heights */
+  --fm-leading-display: 0.98;
+  --fm-leading-tight:   1.12;
+  --fm-leading-normal:  1.5;
+  --fm-leading-relaxed: 1.65;
+
+  /* Letter spacing */
+  --fm-tracking-display: -0.015em;
+  --fm-tracking-tight:   -0.01em;
+  --fm-tracking-normal:  0;
+  --fm-tracking-loose:   0.04em;
+  --fm-tracking-eyebrow: 0.32em;   /* very wide — used for labels */
+
+  /* ---------- Spacing — 4px grid, with editorial macro-spacing --- */
+  --fm-space-1:  4px;
+  --fm-space-2:  8px;
+  --fm-space-3:  12px;
+  --fm-space-4:  16px;
+  --fm-space-5:  24px;
+  --fm-space-6:  32px;
+  --fm-space-7:  48px;
+  --fm-space-8:  64px;
+  --fm-space-9:  96px;
+  --fm-space-10: 128px;
+  --fm-space-11: 192px;   /* section break */
+
+  /* ---------- Radii — minimal. Architectural means sharp. --------- */
+  --fm-radius-none: 0;
+  --fm-radius-sm:   2px;
+  --fm-radius-md:   4px;
+  --fm-radius-lg:   8px;   /* maximum — used sparingly */
+  --fm-radius-full: 9999px;
+
+  /* ---------- Borders --------------------------------------------- */
+  --fm-stroke-hair: 1px;
+  --fm-stroke:      1.5px;
+  --fm-stroke-bold: 2px;
+
+  /* ---------- Shadows — soft, natural light, never hard ----------- */
+  --fm-shadow-none:  none;
+  --fm-shadow-sm:    0 1px 2px rgba(26,23,20,0.04), 0 1px 1px rgba(26,23,20,0.03);
+  --fm-shadow-md:    0 8px 24px -12px rgba(26,23,20,0.18);
+  --fm-shadow-lg:    0 24px 60px -24px rgba(26,23,20,0.28);
+  --fm-shadow-xl:    0 40px 120px -40px rgba(26,23,20,0.40);
+  /* Inset — for press states, sunk panels */
+  --fm-shadow-inset: inset 0 1px 0 rgba(26,23,20,0.06);
+
+  /* ---------- Motion --------------------------------------------- */
+  --fm-ease-out:    cubic-bezier(0.22, 1, 0.36, 1);    /* cinematic outro */
+  --fm-ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);    /* page transitions */
+  --fm-ease-soft:   cubic-bezier(0.4, 0, 0.2, 1);
+  --fm-dur-quick:   180ms;
+  --fm-dur-base:    320ms;
+  --fm-dur-slow:    640ms;
+  --fm-dur-curtain: 1200ms;   /* full-screen image reveals */
+
+  /* ---------- Layout ---------------------------------------------- */
+  --fm-container:       1440px;
+  --fm-container-wide:  1680px;
+  --fm-gutter:          var(--fm-space-7);    /* 48px page side margin */
+  --fm-grid-cols:       12;
+  --fm-grid-gap:        var(--fm-space-5);    /* 24px column gap */
+}
+
+/* ============================================================
+   Semantic element styles (drop-in defaults)
+   ============================================================ */
+
+body {
+  font-family: var(--fm-font-sans);
+  font-size: var(--fm-size-body);
+  line-height: var(--fm-leading-normal);
+  color: var(--fm-fg);
+  background: var(--fm-bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.fm-display-1, h1.fm-display, .fm-hero {
+  font-family: var(--fm-font-display);
+  font-weight: 400;
+  font-size: var(--fm-size-display-1);
+  line-height: var(--fm-leading-display);
+  letter-spacing: var(--fm-tracking-display);
+  text-wrap: pretty;
+}
+
+.fm-display-2 {
+  font-family: var(--fm-font-display);
+  font-weight: 400;
+  font-size: var(--fm-size-display-2);
+  line-height: var(--fm-leading-display);
+  letter-spacing: var(--fm-tracking-display);
+}
+
+h1, .fm-h1 {
+  font-family: var(--fm-font-display);
+  font-weight: 400;
+  font-size: var(--fm-size-h1);
+  line-height: var(--fm-leading-tight);
+  letter-spacing: var(--fm-tracking-tight);
+}
+
+h2, .fm-h2 {
+  font-family: var(--fm-font-display);
+  font-weight: 400;
+  font-size: var(--fm-size-h2);
+  line-height: var(--fm-leading-tight);
+  letter-spacing: var(--fm-tracking-tight);
+}
+
+h3, .fm-h3 {
+  font-family: var(--fm-font-sans);
+  font-weight: 500;
+  font-size: var(--fm-size-h3);
+  line-height: 1.3;
+  letter-spacing: var(--fm-tracking-normal);
+}
+
+h4, .fm-h4 {
+  font-family: var(--fm-font-sans);
+  font-weight: 500;
+  font-size: var(--fm-size-h4);
+  line-height: 1.4;
+}
+
+p, .fm-body {
+  font-family: var(--fm-font-sans);
+  font-weight: 400;
+  font-size: var(--fm-size-body);
+  line-height: var(--fm-leading-relaxed);
+  color: var(--fm-fg-muted);
+  text-wrap: pretty;
+}
+
+.fm-lede {
+  font-family: var(--fm-font-display);
+  font-weight: 300;
+  font-size: var(--fm-size-body-lg);
+  font-size: clamp(20px, 1.6vw, 26px);
+  line-height: 1.4;
+  letter-spacing: -0.005em;
+  color: var(--fm-fg-muted);
+  font-style: italic;
+}
+
+small, .fm-caption {
+  font-family: var(--fm-font-sans);
+  font-weight: 400;
+  font-size: var(--fm-size-caption);
+  line-height: 1.5;
+  color: var(--fm-fg-subtle);
+}
+
+.fm-eyebrow {
+  font-family: var(--fm-font-sans);
+  font-weight: 500;
+  font-size: var(--fm-size-eyebrow);
+  letter-spacing: var(--fm-tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--fm-fg-subtle);
+}
+
+.fm-meta, code, kbd {
+  font-family: var(--fm-font-mono);
+  font-size: var(--fm-size-caption);
+  letter-spacing: 0.02em;
+  color: var(--fm-fg-subtle);
+}
+
+/* Editorial number/index — used for project counts, capability indices */
+.fm-index {
+  font-family: var(--fm-font-mono);
+  font-size: var(--fm-size-eyebrow);
+  letter-spacing: 0.16em;
+  color: var(--fm-fg-subtle);
+}
+
+::selection {
+  background: var(--fm-walnut-500);
+  color: var(--fm-paper-100);
+}
